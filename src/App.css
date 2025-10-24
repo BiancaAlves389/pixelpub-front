@@ -1,0 +1,72 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Adicione este código no seu arquivo CSS, por exemplo src/index.css */
+
+.promo-image {
+  max-width: 100%; /* Garante que a imagem não ultrapasse a largura do seu container */
+  height: auto;    /* Mantém a proporção da imagem */
+  display: block;  /* Remove espaços extras abaixo da imagem */
+  border-radius: 8px; /* Opcional: para deixar as bordas arredondadas, combinando com o card */
+  margin-bottom: 10px; /* Opcional: para dar um pequeno espaço entre a imagem e o título */
+}
+
+/* Você também pode querer ajustar o tamanho do próprio card */
+.promo-card {
+  width: 300px; /* Largura fixa para o card, ajuste conforme preferir */
+  padding: 15px; /* Espaçamento interno */
+  border: 1px solid #ddd; /* Borda leve */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  background-color: #fdfdfd; /* Cor de fundo do card */
+  text-align: center; /* Centraliza o texto */
+}
+
+/* Para a grade de promoções, para que os cards fiquem um ao lado do outro */
+.promo-grid {
+  display: grid; /* Usa CSS Grid */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colunas responsivas */
+  gap: 20px; /* Espaço entre os cards */
+  padding: 20px; /* Espaçamento da grade */
+  justify-items: center; /* Centraliza os itens na grade */
+}

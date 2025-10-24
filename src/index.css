@@ -1,0 +1,526 @@
+body {
+ margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2e6d9; /* Cor de fundo principal da sua aplicação */
+}
+
+/*------ESTILOS DO HEADER (BARRA SUPERIROR) ----*/
+.topbar{
+  background: #7b4f39; /* Cor do fundo (marrom escuro) */
+  color: white; /* Cor do texto dentro da barra */
+  display: flex; /* ATIVA O FLEXBOX: Coloca os itens (logo, links, botâo) ao lado um do outro */
+  justify-content: space-between; /* "Empurra o logo para a esqurda e o botão para a direita*/
+  align-items: center; /* Alinha verticalmente no centro (o texto e o botão ficam na mesma linha)*/
+  padding: 30px 20px; /* Espaçamento interno (10px em cima/baixo e 2opx nas laterais) */
+}
+
+.logo-text{
+  font-weight: bold; /*Deixa o texto em negrito (logo)*/
+  color: #f2cf3a; /* Cor amarela do titulo no topo */
+}
+
+.nav-links a {
+  color: white; /* define cor dos links (Home, cadastro..) */
+  margin: 0 10px; /* Adiciona um espaço de 10px entre cada link */
+  text-decoration: none; /* tira o suplinhado dos links*/
+  font-weight: bold; /*deixa o texto do link em negrito*/
+}
+
+.login-btn {
+  background: #f2cf3a; /* cor de fundo amarela (botao login)*/
+  border: none; /*tira a borda padrao do botão*/
+  padding: 6px 12px; /*espaçamento interno do botão*/
+  border-radius: 6px; /* Arrendonda os vantos do botâo*/
+  cursor: pointer; /* Transforma o cursor em maozinha kk*/
+}
+
+/*--- ESTILOS DO CONTAINER PRINCIPAL ---*/
+
+.app-container {
+  display: flex; /* ativa o flexbox*/
+  min-height: calc(100vh - 40px); /*garante que o container ocupe a altura total da tela*/
+}
+
+/*---ESTILOS DA SIDEBAR (A BARRA LATERAL) ---*/
+
+.sidebar {
+  width: 80px; /*Define a largura fixa da barra lateral*/
+  background: #7b4f39; 
+  padding-top: 20px; /* espaço no topo para afastar os icones"*/
+}
+
+.sidebar ul{
+  list-style: none; /* tira as bolinhas padrão da lista*/
+  padding: 0; /* Tira o espaçamento interno padrão da lista*/
+}
+
+.sidebar li{
+  margin: 30px 0; /*Adicona 30px de espaço encima e embaixo de cada item*/
+  text-align: center; /*Centraliza ícone/botão na horizontal*/
+}
+
+.siderbar a {
+  color: #f2cf3a; 
+  font-size: 24px; /*aumenta o tamanho dos ícones/emojis*/
+}
+
+.sidebar a {
+  color: #f2cf3a;
+  font-size: 24px;
+}
+
+/*--- ESTILOS DO CONTEÚDO PRINCIPAL ---*/
+.main-content{
+  flex-grow: 1; /* faz com que esta área ocupe todo os espaço restante após a Sidebar */
+  padding: 20px;
+  text-align: center; /* Centraliza o logo e o subtitulo*/
+}
+  
+/* ... (Seu código CSS anterior) ... */
+
+/* ESTILO DA TELA DE CADASTRO --------------------- */
+.cadastro-container {
+  max-width: 600px; /*define a largura max do form */
+  /* CORRIGIDO: 'auto' para centralizar */
+  margin: 100px auto; /*centraliza o form horizontalmente */ 
+  padding: 50px;
+  background: white;
+  border-radius: 8px; 
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Corrigi o valor do alpha */
+  text-align: left; /*alinha o texto do form a esquerda */
+  font-size: 20px;
+
+}
+
+.cadastro-form button[type="submit"] {
+  background: #7b4f39; 
+  color: white;
+  padding: 10px; 
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px; 
+  width: 50%;
+  margin-top: 30px;
+  display: block; /*torna em bloco*/
+  margin: 30px auto 0 auto; /*30px no topo e auto p centrlizar os dois lados*/
+}
+
+/* NOVO: CSS para empilhar os elementos */
+.cadastro-form {
+    display: flex;
+    flex-direction: column; /* Coloca os labels e inputs um abaixo do outro */
+}
+
+.cadastro-form label{
+margin-top: 10px;
+}
+/* ... (restante do seu CSS do formulário) ... */
+
+/* --- CARDS DE PROMO/OUTROS (ESPERANDO GI FAZER CANVA) --- */
+
+.promo-grid {
+    display: flex;
+    justify-content: center; /* Centraliza a grade de cards */
+    gap: 20px; /* Espaço entre os cards */
+    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha se a tela for pequena */
+    margin-top: 30px;
+}
+
+.promo-card {
+    width: 300px; /* Define uma largura máxima para cada card */
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden; /* Garante que a imagem se ajuste */
+    text-align: left;
+}
+
+.promo-card img {
+    width: 100%; /* Faz a imagem ocupar 100% da largura do seu card (300px) */
+    height: auto;
+    display: block;
+}
+
+.promo-card-content {
+    padding: 15px;
+}
+
+/* --- ESTILOS DOS ÍCONES DA SIDEBAR --- */
+
+.sidebar-icon {
+  width: 32px; /*define a larg dos icons*/
+  height: 32px; /*mantém larg e alt iguais p nao distorcer */
+  display: block;
+  margin: 0 auto;
+}
+
+.sidebar a {
+  color: transparent; /*torna o texto invisivel*/
+}
+
+/*ESTILO TELINHA DE ESTOQUE ---------------------------------------------*/
+
+.estoque-container {
+  padding: 20px;
+}
+
+.estoque-table {
+  width: 100%; /* 'ocupando x' da aréa de conteudo */
+  border-collapse: collapse; /* remove as bordas duplas entre cédulas */
+  margin-top: 20px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0,1);
+}
+
+.estoque-table th{
+  background: #7b4f39; /*marronzinho do fundo rss*/
+  color: white; /* text branco*/
+  padding: 12px;
+  text-align: left; /*alinha o texto das colunas paera a esquerda*/
+}
+
+.estoque-table th{
+  padding: 10px;
+  border-bottom: 1px solid #add; /* linha divisoria suave entre as outras linhas */
+  text-align: left;
+}
+
+.estoque-table tr:hover {
+  background-color: #f2e6d9; /*cor de fundo suave ao passa o mouse*/
+}
+
+.estoque-table button{
+  background: #f2cf3a;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ESTILO TELINHA DE RESERVA -----------------------------------------------------------------*/
+
+
+.reserva-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: flex-start; /* Alinha no topo */
+    padding-top: 50px;
+    height: 90vh; /* Ocupa quase a altura total da tela */
+}
+
+.reserva-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 400px;
+    display: flex;
+    flex-direction: column; /* Empilha os elementos */
+}
+
+.reserva-form h3 {
+    text-align: center;
+    color: #7b4f39; 
+    margin-bottom: 5px;
+}
+
+.reserva-form p {
+    text-align: center;
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+}
+
+.reserva-form label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.reserva-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.reserva-button {
+    background: #7b4f39; 
+    color: white;
+    padding: 12px; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; 
+    margin-top: 15px;
+}
+
+.reserva-button:hover {
+    background: #5c3b2d; /* Escurece um pouco no hover */
+}
+
+/* --- ATUALIZAÇÕES ESTILOS PROFISSIONAIS BIANCA --- */
+
+/* --- CÓDIGO CSS ATUALIZADO (CORES ORIGINAIS + REFINAMENTO PROFISSIONAL) --- */
+
+body {
+    margin: 0;
+    /* Fonte mais profissional/limpa */
+    font-family: 'Helvetica Neue', Arial, sans-serif; 
+    background: #f2e6d9; /* Cor de fundo principal CLARA (BEGE) */
+}
+
+/*------ESTILOS DO HEADER (BARRA SUPERIROR) ----*/
+.topbar{
+    background: #7b4f39; /* Cor do fundo (marrom escuro) */
+    color: white; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px 30px; /* Mais compacto */
+    /* Adiciona uma linha sutil para refino */
+    border-bottom: 3px solid #f2cf3a; 
+}
+
+.logo-text{
+    font-weight: bold; 
+    color: #f2cf3a; /* Cor amarela do titulo no topo */
+    font-size: 1.2em; 
+}
+
+.nav-links a {
+    color: white; 
+    margin: 0 15px; 
+    text-decoration: none; 
+    font-weight: 600; 
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f2cf3a; 
+}
+
+.login-btn {
+    background: #f2cf3a; /* COR DO BOTÃO VOLTA AO AMARELO */
+    color: #7b4f39; /* Texto marrom no botão amarelo */
+    border: none; 
+    padding: 8px 16px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    font-weight: bold;
+    letter-spacing: 0.5px; 
+}
+
+/*--- ESTILOS DO CONTAINER PRINCIPAL ---*/
+.app-container {
+    display: flex; 
+    min-height: calc(100vh - 54px); /* Ajuste com base no novo padding do topbar */
+}
+
+/*---ESTILOS DA SIDEBAR (A BARRA LATERAL) ---*/
+.sidebar {
+    width: 65px; /* Mais estreita */
+    background: #7b4f39; 
+    padding-top: 20px; 
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar ul{
+    list-style: none; 
+    padding: 0; 
+}
+
+.sidebar li{
+    margin: 25px 0; 
+    text-align: center; 
+}
+
+.sidebar a {
+    display: block;
+    padding: 5px;
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #5c3b2d; 
+}
+
+.sidebar-icon {
+    width: 30px; 
+    height: 30px; 
+    display: block;
+    margin: 0 auto;
+}
+
+/*--- ESTILOS DO CONTEÚDO PRINCIPAL ---*/
+.main-content{
+    flex-grow: 1; 
+    background-color: white; /* Fundo branco para as áreas de conteúdo (tabelas/forms) */
+    padding: 20px 40px; 
+    text-align: center; 
+}
+
+/* 4. ESTILO DA TELA DE CADASTRO */
+.cadastro-container {
+    max-width: 500px; 
+    margin: 50px auto; 
+    padding: 30px; 
+    background: #f9f9f9; 
+    border-radius: 6px; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08); 
+    text-align: left; 
+    font-size: 16px; 
+    border: 1px solid #eee;
+}
+
+.cadastro-form {
+    display: flex;
+    flex-direction: column; 
+}
+
+.cadastro-form label{
+    margin-top: 10px;
+}
+
+.cadastro-form button[type="submit"] {
+    background: #7b4f39; 
+    color: white;
+    padding: 12px; /* Aumentei um pouco */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; /* Aumentei a fonte do botão */
+    width: 50%;
+    display: block; 
+    margin: 30px auto 0 auto; 
+}
+
+/* --- ESTILOS DA PÁGINA HOME (VITRINE) --- */
+
+/* Novo: Define um fundo mais neutro para a Home para destacar os cards */
+.home-page {
+    /* O main-content usa white, mas a Home pode usar o bege original para suavizar */
+    background-color: #f2e6d9; 
+    padding: 40px;
+    min-height: 100%;
+    /* Substitui o padding do .main-content APENAS nesta página */
+}
+
+.home-page h1 {
+    color: #7b4f39;
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.home-page p {
+    color: #5c3b2d;
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.promo-grid {
+    display: flex;
+    justify-content: center; 
+    gap: 30px; /* Mais espaço entre os cards */
+    flex-wrap: wrap; 
+    margin-top: 30px;
+}
+
+.promo-card {
+    width: 300px; 
+    background: white; /* Cards brancos se destacam no fundo bege */
+    border-radius: 8px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15); /* Sombra mais forte para efeito 'flutuante' de vitrine */
+    overflow: hidden; 
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+.promo-card:hover {
+    transform: translateY(-5px); /* Efeito sutil de levantar ao passar o mouse */
+    box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+}
+
+.promo-card img {
+    width: 100%; 
+    height: auto;
+    display: block;
+}
+
+.promo-card-content {
+    padding: 15px;
+}
+
+.promo-card-content h4 {
+    color: #7b4f39; /* Título marrom */
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.promo-card-content p {
+    color: #555;
+    margin-bottom: 5px;
+    font-size: 1em;
+}
+
+.estoque-container {
+    padding: 0; /* Remove padding duplicado se já está no main-content */
+}
+
+.estoque-table {
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 25px;
+    /* Remove background e shadow do table para usar o branco do main-content */
+    background: none; 
+    box-shadow: none;
+    border: 1px solid #ddd; /* Borda externa leve */
+}
+
+.estoque-table th{
+    background: #7b4f39; 
+    color: white; 
+    padding: 12px 15px; /* Mais espaço interno */
+    text-align: left; 
+    font-weight: 700; /* Mais negrito */
+    text-transform: uppercase;
+    font-size: 11px; /* Letra menor para cabeçalho */
+    letter-spacing: 0.5px;
+}
+
+.estoque-table td{ /* Altera o 'th' anterior para 'td' */
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee; /* Linhas divisórias muito suaves */
+    border-top: 1px solid #eee;
+    text-align: left;
+    font-size: 14px;
+    background: white; /* Fundo branco para as células */
+}
+
+.estoque-table tr:hover {
+    background-color: #f7f7f7; /* Cor de fundo suave ao passar o mouse */
+}
+
+/* Estilo para a coluna de ações (botões) */
+.estoque-table button{
+    background: #f2cf3a;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+/* 6. ESTILO DA TELA DE RESERVA (Refinamento) */
+
+.reserva-form {
+    background-color: #f2dbc9; /* Fundo levemente cinza */
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    width: 400px;
+    border: 1px solid #eeeeee;
+}
